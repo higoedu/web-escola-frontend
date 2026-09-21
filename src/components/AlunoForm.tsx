@@ -15,7 +15,6 @@ function AlunoForm({ disciplinas, onAlunoSalvo, alunoParaEditar, onCancelarEdica
     const [anoIngresso, setAnoIngresso] = useState("")
     const [semestreIngresso, setSemestreIngresso] = useState("")
     const [situacaoAluno, setSituacaoAluno] = useState("")
-    const [dataIngresso, setDataIngresso] = useState("")
     const [curso, setCurso] = useState("")
     const [disciplinaId, setDisciplinaId] = useState("")
     const [mensagem, setMensagem] = useState("")
@@ -27,9 +26,8 @@ function AlunoForm({ disciplinas, onAlunoSalvo, alunoParaEditar, onCancelarEdica
             setAnoIngresso(String(alunoParaEditar.anoIngresso))
             setSemestreIngresso(String(alunoParaEditar.semestreIngresso))
             setSituacaoAluno(alunoParaEditar.situacaoAluno)
-            setDataIngresso(alunoParaEditar.dataIngresso.substring(0, 10))
             setCurso(alunoParaEditar.curso)
-            setDisciplinaId(String(alunoParaEditar.disciplina.id))
+            setDisciplinaId(String(alunoParaEditar.disciplinaId))
         }
     }, [alunoParaEditar])    
 
@@ -50,10 +48,9 @@ function AlunoForm({ disciplinas, onAlunoSalvo, alunoParaEditar, onCancelarEdica
             aluno,
             anoIngresso: Number(anoIngresso),
             curso,
-            dataIngresso,
             semestreIngresso: Number(semestreIngresso),
             situacaoAluno,
-            disciplina: disciplinaSelecionada,
+            disciplinaId: Number(disciplinaId),
         }
 
         console.log("Semestre enviado:", semestreIngresso)
@@ -75,7 +72,6 @@ function AlunoForm({ disciplinas, onAlunoSalvo, alunoParaEditar, onCancelarEdica
             setAnoIngresso("")
             setSemestreIngresso("")
             setSituacaoAluno("")
-            setDataIngresso("")
             setCurso("")
             setDisciplinaId("")
         } catch (erro) {
@@ -141,16 +137,7 @@ function AlunoForm({ disciplinas, onAlunoSalvo, alunoParaEditar, onCancelarEdica
                         <option value="Inativo">Inativo</option>
                     </select>
                 </div>
-        
-                <div>
-                    <label>Data de ingresso:</label>
-                    <input
-                        type="date"
-                        value={dataIngresso}
-                        onChange={(e) => setDataIngresso(e.target.value)}
-                    />
-                </div>
-        
+                
                 <div>
                     <label>Curso:</label>
                     <input

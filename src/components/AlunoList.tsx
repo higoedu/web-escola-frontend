@@ -1,12 +1,21 @@
 import type { Aluno } from "../types/Aluno"
+import type { Disciplina } from "../types/Disciplina"
 
 interface AlunoListProps {
     alunos: Aluno[]
+    disciplinas: Disciplina[]
     onAlterar: (aluno: Aluno) => void
     onExcluir: (id: number) => void
 }
 
-function AlunoList({ alunos, onAlterar, onExcluir }: AlunoListProps) {
+function AlunoList({ alunos, disciplinas, onAlterar, onExcluir }: AlunoListProps) {
+    function obterNomeDisciplina(id: number) {
+    const disciplina = disciplinas.find(
+        (disciplina) => disciplina.id === id
+    )
+
+    return disciplina?.disciplina ?? "Disciplina não encontrada"
+}
     function formatarData(data: string) {
         console.log(data);
         const [ano, mes, dia] = data.substring(0, 10).split("-")
@@ -43,7 +52,7 @@ function AlunoList({ alunos, onAlterar, onExcluir }: AlunoListProps) {
                         <td>{formatarData(aluno.dataIngresso)}</td>
                         <td>{aluno.semestreIngresso}</td>
                         <td>{aluno.situacaoAluno}</td>
-                        <td>{aluno.disciplina.disciplina}</td>
+                        <td>{obterNomeDisciplina(aluno.disciplinaId)}</td>
                         <td>
                             <button
                                 type="button"

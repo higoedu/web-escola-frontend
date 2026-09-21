@@ -123,6 +123,7 @@ function Alunos() {
 
                         <AlunoList
                             alunos={alunos}
+                            disciplinas={disciplinas}
                             onAlterar={(aluno) => setAlunoParaEditar(aluno)}
                             onExcluir={async (id) => {
                                 await excluirAluno(id)
