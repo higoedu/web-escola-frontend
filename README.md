@@ -1,32 +1,69 @@
-# React + TypeScript + Vite
+# ⚛️ Sistema Escolar - Front-end Web
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Interface web moderna, dinâmica e responsiva do Sistema Escolar. Este projeto foi desenvolvido para consumir a API REST em Java/Spring e fornecer uma experiência de usuário limpa, fluida e intuitiva para o gerenciamento de fluxos educacionais.
 
-Currently, two official plugins are available:
+*Nota: Este projeto representou um desafio pessoal prático para consolidação de conhecimentos e aprendizado em React e TypeScript.*
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+### 🛠️ Tecnologias Utilizadas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **Biblioteca Principal:** React
+* **Linguagem:** TypeScript (Garantindo tipagem segura, autocomplete robusto e menos bugs em tempo de execução)
+* **Estilização:** CSS3 puro / Bootstrap (Layouts flexíveis e design responsivo)
+* **Comunicação com a API:** Axios (Cliente HTTP baseado em Promises)
+* **Gerenciador de Pacotes:** NPM / Yarn
 
-## Expanding the Oxlint configuration
+---
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+### 🚀 Funcionalidades Principais
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+* **Integração com API REST:** Consumo completo e assíncrono de endpoints para listagem, criação, edição e exclusão (CRUD).
+* **Interface Responsiva:** Estrutura visual adaptada para perfeita renderização em computadores, tablets e smartphones.
+* **Gerenciamento de Estado:** Fluxo de dados otimizado utilizando Hooks para atualização rápida de tabelas, formulários e mensagens de feedback.
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+---
+
+### 🔧 Como Executar o Projeto (Passo a Passo)
+
+#### **Pré-requisitos**
+* Node.js instalado (versão 18 ou superior LTS recomendada).
+* O ambiente de Back-end (`api-escola-backend`) deve estar em execução para que os dados sejam integrados e exibidos na tela.
+
+#### **Instalação e Configuração**
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com
+   ```
+2. Acesse a pasta do projeto:
+   ```bash
+   cd web-escola-frontend
+   ```
+3. Certifique-se de que a URL base de comunicação no arquivo de serviços (geralmente em `src/services/api.ts` ou arquivos de ambiente) está apontando para o endereço correto da API Spring:
+   ```typescript
+   const api = axios.create({
+     baseURL: 'http://localhost:8080'
+   });
+   ```
+
+#### **Execução**
+1. Instale todas as dependências mapeadas do ecossistema Node:
+   ```bash
+   npm install
+   ```
+2. Inicie o servidor local de desenvolvimento do React:
+   ```bash
+   npm start
+   ```
+   *(Caso o projeto tenha sido estruturado utilizando o Vite, utilize o comando `npm run dev` no terminal).*
+3. O terminal indicará o sucesso da operação e abrirá automaticamente o navegador em `http://localhost:3000` (ou na porta correspondente).
+
+---
+
+### 📈 Conecte-se Comigo
+
+* **LinkedIn:** [linkedin.com/in/higoeduardo](https://www.linkedin.com/in/higoeduardo/)
+* **E-mail:** [higoedu@gmail.com]
+
+---
+💻 *Desenvolvido por Higo Eduardo como portfólio técnico Full Stack.*
