@@ -10,7 +10,7 @@ Interface web moderna, dinâmica e responsiva do Sistema Escolar. Este projeto f
 
 * **Biblioteca Principal:** React
 * **Linguagem:** TypeScript (Garantindo tipagem segura, autocomplete robusto e menos bugs em tempo de execução)
-* **Estilização:** CSS3 puro / Bootstrap (Layouts flexíveis e design responsivo)
+* **Estilização:** CSS puro / Bootstrap (Layouts flexíveis e design responsivo)
 * **Comunicação com a API:** Axios (Cliente HTTP baseado em Promises)
 * **Gerenciador de Pacotes:** NPM / Yarn
 
